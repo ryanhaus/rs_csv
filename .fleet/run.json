@@ -1,0 +1,21 @@
+{
+	"configurations": [
+		{
+			"type": "cargo",
+			"executableArgs": [ "clippy" ],
+			"name": "Run clippy",
+		},
+
+		{
+			"type":  "cargo",
+			"executableArgs": [ "fmt" ],
+			"name": "Run rustfmt"
+		},
+
+		{
+			"type": "cargo",
+			"executableArgs": [ "fmt", "--check" ],
+			"name": "Run rustfmt (check mode)"
+		}
+	]
+}
