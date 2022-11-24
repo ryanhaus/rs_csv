@@ -61,7 +61,7 @@ impl BasicApp {
 
             // attempt to read the file to a string and parse it as a CSV file
             let data = fs::read_to_string(file_name).expect("Could not read file");
-            let parsed_data = csv_parse::parse_csv(data);
+            let parsed_data = csv_parse::parse_csv::<u32>(data);
 
             println!("{:?}", &parsed_data);
         }
