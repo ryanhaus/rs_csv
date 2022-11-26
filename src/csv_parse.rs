@@ -60,12 +60,11 @@ where
         match c {
             ',' | '\n' => {
                 // take the current string, convert it, add it to our Vec<T>, and clear the string
-                let parsed = current_str
-                    .clone()
-                    .parse::<T>()
-                    .unwrap_or_else(|_| panic!("Could not parse \"{:?}\" as supplied type T", &current_str));
-                entries[entries_index].push(parsed);
+                let parsed = current_str.clone().parse::<T>().unwrap_or_else(|_| {
+                    panic!("Could not parse \"{:?}\" as supplied type T", &current_str)
+                });
 
+                entries[entries_index].push(parsed);
                 current_str.clear();
 
                 // if it's a new line, create a new working Vec<T> and change the entries_index accordingly
